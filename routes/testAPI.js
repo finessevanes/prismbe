@@ -10,7 +10,9 @@ const readFileAsync = (file) => {
     } else {
       try {
         router.get("/", (req, res) => {
-          res.send(JSON.parse(data).transactions);
+          // res.send(JSON.parse(data).transactions);
+          // res.send(json(data));
+          res.json(data.transactions);
         });
       } catch (error) {
         console.log(error);
@@ -19,6 +21,6 @@ const readFileAsync = (file) => {
   });
 };
 
-const dataArray = readFileAsync(fileName);
+readFileAsync(fileName);
 
 module.exports = router;
