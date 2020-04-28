@@ -3,8 +3,8 @@ var router = express.Router();
 const fs = require("fs");
 const fileName = "./routes/dataTonic.json";
 
-const readFileAsync = (file) => {
-  fs.readFile(file, (error, data) => {
+const readFileAsync = (fileName) => {
+  fs.readFile(fileName, (error, data) => {
     if (error) {
       // console.log(error);
     } else {
@@ -20,7 +20,5 @@ const readFileAsync = (file) => {
     }
   });
 };
-
-readFileAsync(fileName);
 
 module.exports = router;
